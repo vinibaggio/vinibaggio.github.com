@@ -2,7 +2,6 @@
 title: 'Summer 2018 in Italy'
 author: 'Vinicius Baggio Fuentes'
 date: '2018-09-07T00:00:00Z'
-draft: true
 ---
 
 I spent 6 weeks in Italy between June and July 2018. I just had quit my job and spent most of the time in a tiny village in Tuscany. My main goal was to work on some italian inheritage paperwork, and that had many limitations. The main limitation was that I couldn't travel much during the week, so I mostly had half of Saturday and Sunday to travel.
