@@ -31,7 +31,7 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 # Add your own params here
 [params]
   author = "Vinicius Baggio Fuentes"
-  seotitle = "vinibaggio.net (SEO Version)"
+  seotitle = "vinibaggio.net"
   subtitle = "vinibaggio's blog"
   description = "Vinicius Baggio Fuentes space on the internet. I share my words and other productions here, such as photos and code."
   paginate = 10

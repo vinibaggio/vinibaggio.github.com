@@ -9,5 +9,4 @@ static/css/bundle.css*
 static/js/bundle.js*
 static/css/bundle.*.css
 static/js/bundle.*.js
-static/fonts/
-static/img/
+static/fonts/*
