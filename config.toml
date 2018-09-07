@@ -6,6 +6,9 @@ enableRobotsTXT = true
 PygmentsCodeFences = true
 canonifyurls = true
 
+[imaging]
+quality = 100
+
 # Disqus Username
 # disqusShortname = "disqus_shortname"
 

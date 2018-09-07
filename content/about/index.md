@@ -14,4 +14,4 @@ You may notice that my blog is bilingual. I write in whatever language I feel li
 
 Here's how I looked like sometime in 2018:
 
-{{< imgproc me Resize "400x" >}}
+{{< imgproc me Resize "900x" >}}
