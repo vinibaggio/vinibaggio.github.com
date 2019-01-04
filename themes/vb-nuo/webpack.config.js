@@ -30,7 +30,7 @@ PATH.filename = {
   js: ENV.isProd ? 'js/[name].[chunkhash:10].js' : 'js/[name].js',
   css: ENV.isProd ? 'css/[name].[contentHash:10].css' : 'css/[name].css',
   img: ENV.isProd ? 'img/[name].[hash:10].[ext]' : 'img/[name].[ext]',
-  fonts: ENV.isProd ? 'fonts/[name].[hash:10].[ext]' : 'fonts/[name].[ext]',
+  fonts: ENV.isProd ? 'fonts/[name].[hash:10].[ext]' : 'fonts/[name].[ext]'
 };
 
 // Genertate loader list
@@ -40,19 +40,16 @@ const makeLoaders = env => [
     use: [
       MiniCssExtractPlugin.loader,
       `css-loader?sourceMap&importLoaders=1${env.isProd ? '&minimize' : ''}`,
-      'postcss-loader?sourceMap',
+      'postcss-loader?sourceMap'
     ],
     include: PATH.styles,
-    exclude: PATH.exclude,
+    exclude: PATH.exclude
   },
   {
     test: /\.js$/,
     loader: `babel-loader${env.isProd ? '' : '?cacheDirectory'}`,
-    include: [
-      PATH.scripts,
-      path.resolve(PATH.src, 'index.js'),
-    ],
-    exclude: PATH.exclude,
+    include: [PATH.scripts, path.resolve(PATH.src, 'index.js')],
+    exclude: PATH.exclude
   },
   {
     test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
@@ -62,8 +59,8 @@ const makeLoaders = env => [
     options: {
       limit: env.dataUriLimit,
       name: PATH.filename.img,
-      publicPath: '../',
-    },
+      publicPath: '../'
+    }
   },
   {
     test: /\.svg(\?.*)?$/,
@@ -75,8 +72,8 @@ const makeLoaders = env => [
       noquotes: true,
       stripdeclarations: true,
       name: PATH.filename.img,
-      publicPath: '../',
-    },
+      publicPath: '../'
+    }
   },
   {
     test: /\.(eot|ttf|otf|woff2?|svg)(\?.*)?$/,
@@ -86,38 +83,36 @@ const makeLoaders = env => [
     options: {
       limit: env.dataUriLimit,
       name: PATH.filename.fonts,
-      publicPath: '../',
-    },
-  },
+      publicPath: '../'
+    }
+  }
 ];
 
 // Genertate plugin list
-const makePlugins = (env) => {
+const makePlugins = env => {
   const basePlugins = [
     new MiniCssExtractPlugin({
       filename: PATH.filename.css,
-      chunkFilename: PATH.filename.css,
+      chunkFilename: PATH.filename.css
     }),
     new ManifestPlugin({
       fileName: PATH.manifest,
-      filter: chunk => chunk.name && /\S*.(js|css)$/.test(chunk.name),
-    }),
-    new CopyPlugin([
-      path.resolve(PATH.assets, 'favicon.ico'),
-      {
-        from: path.resolve(PATH.assets, '**/*.{png,jpg,jpeg,gif,webp,svg}'),
-        to: 'img',
-        flatten: true,
-        cache: env.isDev,
-      },
-    ]),
+      filter: chunk => chunk.name && /\S*.(js|css)$/.test(chunk.name)
+    })
+    // new CopyPlugin([
+    //   path.resolve(PATH.assets, 'favicon.ico'),
+    //   {
+    //     from: path.resolve(PATH.assets, '**/*.{png,jpg,jpeg,gif,webp,svg}'),
+    //     to: 'img',
+    //     flatten: true,
+    //     cache: env.isDev,
+    //   },
+    // ]),
   ];
 
   // Mode: production
   if (env.isProd) {
-    return basePlugins.concat([
-      new webpack.HashedModuleIdsPlugin(),
-    ]);
+    return basePlugins.concat([new webpack.HashedModuleIdsPlugin()]);
   }
 
   return basePlugins;
@@ -132,9 +127,9 @@ module.exports = {
   output: {
     path: PATH.dist,
     filename: PATH.filename.js,
-    publicPath: PATH.publicPath,
+    publicPath: PATH.publicPath
   },
   devtool: ENV.devtool,
   module: { rules: makeLoaders(ENV) },
-  plugins: makePlugins(ENV),
+  plugins: makePlugins(ENV)
 };

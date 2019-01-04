@@ -47,7 +47,7 @@
     border-bottom: none;
 
     &::before {
-      content: "sep line";
+      content: 'sep line';
       position: absolute;
       top: -12px;
       left: calc(50% - 40px);
@@ -144,7 +144,7 @@
     &::before,
     &::after {
       letter-spacing: -0.2em;
-      content: "\00a0";
+      content: '\00a0';
     }
 
     &.has-jax {
@@ -283,11 +283,6 @@
 
     & img {
       max-width: 100%;
-      box-shadow: 2px 20px 40px 10px var(--box-shadow-dark);
-
-      @media screen and (max-width: 800px) {
-        box-shadow: none;
-      }
     }
 
     & figcaption {
@@ -303,11 +298,6 @@
     display: block;
     margin: 2rem auto;
     max-width: 100%;
-    box-shadow: 2px 20px 40px 10px var(--box-shadow-dark);
-
-    @media screen and (max-width: 800px) {
-      box-shadow: none;
-    }
   }
 
   & div.has-jax {

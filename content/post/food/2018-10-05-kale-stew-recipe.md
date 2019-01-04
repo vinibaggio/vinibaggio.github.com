@@ -8,6 +8,8 @@ Here's a little recipe of something I cooked last night on an improvisation.
 I'm sure it's a known recipe somewhere, but I liked it so much I wanted to
 write it down. Let me know if you make it and what you think.
 
+<!--more-->
+
 # Instant pot kale stew recipe
 
 Servings: two hungry people
